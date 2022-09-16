@@ -1,3 +1,7 @@
+
+
+
+
 /**
  * This class creates a new Management System
  * It is connected to the Database and manages the Input to the Database
@@ -26,7 +30,7 @@ public class Budgetmanager {
     /**
      * Proofs if there is a allready a Budget with this certain Name
      */
-    private void validate(){
+    private void proofFor(){
         if (true){
             // Wenn es das schon gibt
         }else {

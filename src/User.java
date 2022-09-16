@@ -1,11 +1,12 @@
 public class User {
 
     private final String NAME;
-    private final int TEL;
+    private final int USERNAME;
+
 
     public User(String name, int TEL) {
         NAME = name;
-        this.TEL = TEL;
+        this.USERNAME = TEL;
     }
 
 
@@ -13,7 +14,7 @@ public class User {
         return NAME;
     }
 
-    public int getTEL() {
-        return TEL;
+    public int getUSERNAME() {
+        return USERNAME;
     }
 }

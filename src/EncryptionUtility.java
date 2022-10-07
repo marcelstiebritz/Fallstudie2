@@ -7,7 +7,7 @@ import java.util.Base64;
 /**
  * Utility Class for decryption and encryption and key creation
  */
-public  class Encryption {
+public  class EncryptionUtility {
 
     /**
      * The Value for the encryption

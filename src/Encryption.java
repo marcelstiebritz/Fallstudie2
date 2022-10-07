@@ -4,10 +4,15 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-
+/**
+ * Utility Class for decryption and encryption and key creation
+ */
 public  class Encryption {
 
-    public final String AES_ENCRYPTION= "AES";
+    /**
+     * The Value for the encryption
+     */
+    public final static String AES_ENCRYPTION= "AES";
     public static Cipher cipher;
     public static String encrypt(String plainTesxt, SecretKey secretKey) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         byte[] plainTextByte = plainTesxt.getBytes();

@@ -11,8 +11,7 @@ public class MySQLAccess {
 
         Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/Test123", "root", "Bond.007!");
-
+                .getConnection("jdbc:mysql://localhost:3306/Fallstudie", "root", "Bond.007!");
     }
 
     public void closeConnection(){

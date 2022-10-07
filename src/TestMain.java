@@ -5,7 +5,7 @@ import javax.crypto.SecretKey;
 public class TestMain {
     public static void main(String[] args) throws Exception {
         SecretKey originalKey = Encryption.decodeKey(args);
-        Encryption.cipher = Cipher.getInstance("AES");
+        Encryption.cipher = Cipher.getInstance(Encryption.AES_ENCRYPTION);
         // Passwort
         String plainText = "Hallo Was geht ";
         // Verschlüssel des Passworts

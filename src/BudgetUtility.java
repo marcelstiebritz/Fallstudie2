@@ -12,8 +12,10 @@ public  class BudgetUtility {
         prepStmt.setInt(3,budget.getOVERALLBUDGET());
         prepStmt.executeUpdate();
     }
-    public static void getBdudget(String userName, Connection connect){
+    public static Budget getBdudget(String userName, Connection connect){
         PreparedStatement prepStmt;
+
+        return null;
     }
     public static void removeBudget(String budget, Connection connect) throws SQLException {
         PreparedStatement prepStmt;

@@ -9,12 +9,12 @@ public class MySQLAccess {
 
 
     // Filtern der Daten
-    //ENtscheidungen in Java treffen
+    //EEntscheidungen in Java treffen
 
     /**
      * This Method starts a new Connection with a given SQL Server
-     * @throws ClassNotFoundException whewn there is now class with the name "com.mysql.jdbc.Driver"
-     * @throws SQLException if there occures any error while connecting to the SQL Server
+     * @throws ClassNotFoundException when there is now class with the name "com.mysql.jdbc.Driver"
+     * @throws SQLException if there occurs any error while connecting to the SQL Server
      */
     public void startConnection () throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
@@ -50,9 +50,56 @@ public class MySQLAccess {
         UserUtility.removeUser(userName,connect);
     }
 
+    /**
+     * This Method Returns a User with a Certain name from the Database
+     * @param userName The Username of the user that should be returned
+     * @return Returns the User that has the given Name
+     * @throws SQLException Throws an excpetion if there is an error with the SQL Part i.e,
+     * there is no user with the given username
+     */
     public User getUser(String userName) throws SQLException {
          return UserUtility.getUser(userName,connect);
     }
+
+    //--------- everything for the Budget --------
+
+    /**
+     *
+     */
+    public void addBudget(Budget budget) throws SQLException {
+        BudgetUtility.addBudget(budget,connect);
+
+     }
+
+    /**
+     *
+     */
+    public void removeBudget(String budget) throws SQLException {
+        BudgetUtility.removeBudget(budget, connect);
+     }
+
+    /**
+     *
+     * @param budgetName
+     * @return
+     */
+    public Budget returnBudget(String budgetName){
+
+        return null;
+     }
+
+    /**
+     *Beim Hinzufügen oder entfernen von Budgetpunkten muss das Gesamtbudget von den entsprechenden
+     *Punkten neu berechnet werden
+     */
+    public void calculateBudget (){
+
+     }
+
+
+
+
+    //---- everything for the BudgetPoints  -----
 
 
 }

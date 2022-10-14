@@ -5,6 +5,9 @@ public class User {
     private final String PASSWORDHASH;
     private final String ROLE;
     private final String ClCLIET;
+    /**
+     * Usernames are unique names for each user created at login by the user itself
+     */
     private final String USERNAME;
 
 

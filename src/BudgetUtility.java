@@ -1,6 +1,4 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public  class BudgetUtility {
 
@@ -9,13 +7,32 @@ public  class BudgetUtility {
         prepStmt = connect.prepareStatement("INSERT INTO Budgetdatabase values(?,?,?)");
         prepStmt.setInt(1,budget.getIDENTIFIER());
         prepStmt.setString(2,budget.getNAME());
-        prepStmt.setInt(3,budget.getOVERALLBUDGET());
+        prepStmt.setInt(3,budget.getOVERALLBUDGETValue());
         prepStmt.executeUpdate();
     }
-    public static Budget getBdudget(String userName, Connection connect){
+
+
+    public static String getBdudget(Connection connect, User user) throws SQLException {
+        ResultSet rs = null;
+
         PreparedStatement prepStmt;
 
-        return null;
+        prepStmt = connect.prepareStatement("SELECT * From TABLE (  Budgetdatabase) where Username = ?");
+         prepStmt.setString(1, user.getUSERNAME());
+         rs = prepStmt.executeQuery();
+         String returnstring = "";
+        while (rs.next()) {
+
+            int id = rs.getInt("Identifier");
+            String name = rs.getString("Name");
+            int amount = rs.getInt("Overall");
+            String username = rs.getString("Username");
+            returnstring = (id + "\t\t" + name
+                    + "\t\t" + amount +username);
+        }
+        //TODO Entfernen
+        System.out.println(returnstring);
+        return returnstring;
     }
     public static void removeBudget(String budget, Connection connect) throws SQLException {
         PreparedStatement prepStmt;

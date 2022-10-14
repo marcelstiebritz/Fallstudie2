@@ -33,7 +33,11 @@ public class Budget {
         return NAME;
     }
 
-    public int getOVERALLBUDGET() {
+    public int getOVERALLBUDGETValue() {
         return OVERALLBUDGET;
+    }
+
+    public String toString (){
+        return null;
     }
 }

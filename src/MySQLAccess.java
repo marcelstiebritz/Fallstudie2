@@ -79,20 +79,30 @@ public class MySQLAccess {
      }
 
     /**
-     *
-     * @param budgetName
+     * TODO Wir funktioniert das mit dem Returnen und was kommt zurück
+     * This Methods returns all Budgets of a Certain User. I f the user is an Admin it can see all entries. Normal users
+     * can only see their own entries
      * @return
      */
-    public Budget returnBudget(String budgetName){
+    public String getAllBudgetsByUser(User user) throws SQLException {
+        // Prüfen welcher Nutzer gerade angemeldet ist
+        // Prüfen welche Rolle der User hat
+        // Daten entsprechend der Rolle ausgeben
+        return BudgetUtility.getBdudget(this.connect,user);
 
-        return null;
-     }
+    }
+
+    public void addBudgetBoint(){
+
+    }
+
+
 
     /**
      *Beim Hinzufügen oder entfernen von Budgetpunkten muss das Gesamtbudget von den entsprechenden
      *Punkten neu berechnet werden
      */
-    public void calculateBudget (){
+    private void calculateBudget (){
 
      }
 

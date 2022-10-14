@@ -1,16 +1,14 @@
+import org.junit.jupiter.api.Test;
+
 import java.sql.SQLException;
-import java.util.Arrays;
+
+class MainTest {
 
 
-public class UserMain {
-
-
-    /**
-    public static User testuser = new User(3,"Lina","Password","USER","TestClient","Lina123");
-    public static void main(String[] args) {
-
+    @Test
+    public void TestAddUser(){
         MySQLAccess acces = new MySQLAccess();
-
+        User testuser = new User(3,"User1","Password","USER1","TestClient","User1");
         try {
             acces.startConnection();
             acces.addUser(testuser);
@@ -24,6 +22,9 @@ public class UserMain {
         }
 
     }
-*/
+
+
+
+
 
 }

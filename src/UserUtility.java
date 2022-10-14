@@ -14,7 +14,7 @@ public class UserUtility {
      * @throws SQLException Throws an excpetion if there is an error with the SQL Part i.e,
      * there is no user with the given username
      */
-    public static User getUser(String userName,Connection connect) throws SQLException {
+    public static User getUser(String userName, Connection connect) throws SQLException {
         PreparedStatement prepaStmt;
         prepaStmt = connect.prepareStatement("SELECT Username FROM Userdatabase WHERE Username = ?");
         prepaStmt.setString(1,userName);
@@ -32,13 +32,14 @@ public class UserUtility {
 
     /**
      *
-     * This Method adds a new user to the Database. The Username needs to be unique
+     * This Method,m  adds a new user to the Database. The Username needs to be unique
      * @param user The User that shoul be added
      * @param connect The connection on which the additng should take place
      * @throws SQLException An exception that gets thrown if there is an error with the SQL part.
      */
     public static void addUser(User user, Connection connect) throws SQLException {
         PreparedStatement prepStmt;
+
         prepStmt = connect.prepareStatement("INSERT INTO Userdatabase values(?,?,?,?,?,?)");
         prepStmt.setInt(1,user.getIDENTIFIER());
         prepStmt.setString(2,user.getNAME());
